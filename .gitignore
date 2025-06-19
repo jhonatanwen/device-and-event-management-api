@@ -53,6 +53,5 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 
-# Visual Studio and Visual Studio Code
-.vscode/
-.vs/
+# Visual Studio and Visual Studio Code, etc.
+.*/
