@@ -86,7 +86,17 @@ builder.Services.AddAuthorization();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new() { Title = "Device Management API", Version = "v1" });
+    c.SwaggerDoc("v1", new()
+    {
+        Title = "Device Management API",
+        Version = "v1.0.0",
+        Description = "API RESTful para gerenciamento de clientes, dispositivos e eventos, desenvolvida com .NET 8",
+        Contact = new()
+        {
+            Name = "Jhonatan Wendel",
+            Email = "jhonatanwen.dev@gmail.com"
+        }
+    });
 
     c.AddSecurityDefinition("Bearer", new()
     {

@@ -17,7 +17,7 @@ public sealed class ApiStatusController : ControllerBase
             <h1>Device Management API</h1>
             <p>A API est&aacute; funcionando corretamente!</p>
             <p>Data/Hora: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss") + @"</p>
-            <p><a href='/swagger'>Documenta&#231;&#227;o Swagger</a></p>
+            <p><a href='/docs'>Documenta&#231;&#227;o da API</a></p>
         </body>
         </html>";
 

@@ -1,0 +1,920 @@
+openapi: "3.0.3"
+info:
+  title: Device Management API
+  description: API RESTful para gerenciamento de clientes, dispositivos e eventos, desenvolvida com .NET 8
+  version: "1.0.0"
+  contact:
+    name: Jhonatan Wendel
+    email: jhonatanwen.dev@gmail.com
+
+servers:
+  - url: https://localhost:7254/api/v1
+    description: Desenvolvimento (HTTPS)
+  - url: http://localhost:5231/api/v1
+    description: Desenvolvimento (HTTP)
+
+security:
+  - BearerAuth: []
+
+tags:
+  - name: Status
+    description: Status da API
+
+  - name: Autenticação
+    description: Sistema de autenticação JWT
+
+  - name: Clientes
+    description: Gerenciamento de clientes
+
+  - name: Dispositivos
+    description: Gerenciamento de dispositivos
+
+  - name: Eventos
+    description: Sistema de eventos
+
+  - name: Dashboard
+    description: Estatísticas do sistema
+
+paths:
+  /:
+    get:
+      summary: Status da API
+      description: |
+        Retorna uma página HTML simples confirmando que a API está funcionando corretamente.
+
+        **Não requer autenticação.**
+      tags:
+        - Status
+      security: []
+      responses:
+        200:
+          description: API funcionando corretamente
+          content:
+            text/html:
+              schema:
+                type: string
+                example: |
+                  <html>
+                  <head><title>Device Management API</title></head>
+                  <body>
+                    <h1>Device Management API</h1>
+                    <p>✅ A API está funcionando corretamente!</p>
+                    <p>Data/Hora: 20/06/2025 12:00:00</p>
+                    <p><a href='/swagger'>Documentação Swagger</a></p>
+                  </body>
+                  </html>
+
+  /auth/login:
+    post:
+      summary: Autenticação de usuário
+      description: |
+        Realiza a autenticação do usuário e retorna um token JWT para acesso aos endpoints protegidos.
+
+        **Credenciais padrão:**
+        - Username: `admin`
+        - Password: `123456`
+
+        **Não requer autenticação prévia.**
+      tags:
+        - Autenticação
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequest"
+            example:
+              username: "admin"
+              password: "123456"
+      responses:
+        200:
+          description: Login realizado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LoginResponse"
+              example:
+                token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                expiration: "2025-06-20T15:30:00Z"
+        400:
+          description: Dados de login inválidos
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        401:
+          description: Credenciais incorretas
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /clientes:
+    get:
+      summary: Listar todos os clientes
+      description: |
+        Retorna uma lista com todos os clientes cadastrados no sistema.
+
+        **Requer autenticação.**
+      tags:
+        - Clientes
+      responses:
+        200:
+          description: Lista de clientes retornada com sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Cliente"
+              example:
+                - id: "550e8400-e29b-41d4-a716-446655440000"
+                  nome: "João Silva"
+                  email: "joao.silva@email.com"
+                  telefone: "(11) 99999-9999"
+                  status: true
+                - id: "550e8400-e29b-41d4-a716-446655440001"
+                  nome: "Maria Santos"
+                  email: "maria.santos@email.com"
+                  telefone: "(11) 88888-8888"
+                  status: true
+        401:
+          $ref: "#/components/responses/UnauthorizedError"
+        500:
+          $ref: "#/components/responses/InternalServerError"
+
+    post:
+      summary: Criar novo cliente
+      description: |
+        Cria um novo cliente no sistema.
+
+        **Validações:**
+        - Nome: obrigatório, mínimo 2 caracteres
+        - Email: obrigatório, formato válido, único no sistema
+        - Telefone: opcional, formato brasileiro
+        - Status: padrão true
+
+        **Requer autenticação.**
+      tags:
+        - Clientes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateClienteRequest"
+            example:
+              nome: "João Silva"
+              email: "joao.silva@email.com"
+              telefone: "(11) 99999-9999"
+              status: true
+      responses:
+        201:
+          description: Cliente criado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cliente"
+              example:
+                id: "550e8400-e29b-41d4-a716-446655440000"
+                nome: "João Silva"
+                email: "joao.silva@email.com"
+                telefone: "(11) 99999-9999"
+                status: true
+        400:
+          description: Dados inválidos ou email já existe
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ValidationErrorResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedError"
+
+  /clientes/{id}:
+    get:
+      summary: Buscar cliente por ID
+      description: |
+        Retorna os dados de um cliente específico pelo seu ID.
+
+        **Requer autenticação.**
+      tags:
+        - Clientes
+      parameters:
+        - $ref: "#/components/parameters/ClienteId"
+      responses:
+        200:
+          description: Cliente encontrado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cliente"
+              example:
+                id: "550e8400-e29b-41d4-a716-446655440000"
+                nome: "João Silva"
+                email: "joao.silva@email.com"
+                telefone: "(11) 99999-9999"
+                status: true
+        404:
+          description: Cliente não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedError"
+
+    put:
+      summary: Atualizar cliente
+      description: |
+        Atualiza completamente os dados de um cliente existente.
+
+        **Validações:**
+        - Nome: obrigatório, mínimo 2 caracteres
+        - Email: obrigatório, formato válido, único no sistema
+        - Telefone: opcional, formato brasileiro
+
+        **Requer autenticação.**
+      tags:
+        - Clientes
+      parameters:
+        - $ref: "#/components/parameters/ClienteId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateClienteRequest"
+            example:
+              nome: "João Silva Atualizado"
+              email: "joao.silva.novo@email.com"
+              telefone: "(11) 88888-8888"
+              status: false
+      responses:
+        200:
+          description: Cliente atualizado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cliente"
+        400:
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ValidationErrorResponse"
+        404:
+          description: Cliente não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedError"
+
+    delete:
+      summary: Excluir cliente
+      description: |
+        Remove um cliente do sistema.
+
+        **Observação:** Não é possível excluir clientes que possuem dispositivos vinculados.
+
+        **Requer autenticação.**
+      tags:
+        - Clientes
+      parameters:
+        - $ref: "#/components/parameters/ClienteId"
+      responses:
+        204:
+          description: Cliente excluído com sucesso
+        400:
+          description: Cliente possui dispositivos vinculados
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        404:
+          description: Cliente não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedError"
+
+  /dispositivos:
+    get:
+      summary: Listar todos os dispositivos
+      description: |
+        Retorna uma lista com todos os dispositivos cadastrados no sistema.
+
+        **Requer autenticação.**
+      tags:
+        - Dispositivos
+      responses:
+        200:
+          description: Lista de dispositivos retornada com sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Dispositivo"
+        401:
+          $ref: "#/components/responses/UnauthorizedError"
+
+    post:
+      summary: Criar novo dispositivo
+      description: |
+        Cria um novo dispositivo vinculado a um cliente.
+
+        **Validações:**
+        - Serial: obrigatório, único no sistema
+        - IMEI: obrigatório, 15 dígitos, validação de checksum
+        - ClienteId: obrigatório, cliente deve existir
+
+        **Requer autenticação.**
+      tags:
+        - Dispositivos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateDispositivoRequest"
+            example:
+              serial: "DEV001"
+              imei: "490154203237518"
+              clienteId: "550e8400-e29b-41d4-a716-446655440000"
+      responses:
+        201:
+          description: Dispositivo criado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Dispositivo"
+        400:
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ValidationErrorResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedError"
+
+  /dispositivos/{id}:
+    get:
+      summary: Buscar dispositivo por ID
+      description: |
+        Retorna os dados de um dispositivo específico pelo seu ID.
+
+        **Requer autenticação.**
+      tags:
+        - Dispositivos
+      parameters:
+        - $ref: "#/components/parameters/DispositivoId"
+      responses:
+        200:
+          description: Dispositivo encontrado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Dispositivo"
+        404:
+          description: Dispositivo não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedError"
+
+  /dispositivos/cliente/{clienteId}:
+    get:
+      summary: Buscar dispositivos por cliente
+      description: |
+        Retorna todos os dispositivos vinculados a um cliente específico.
+
+        **Requer autenticação.**
+      tags:
+        - Dispositivos
+      parameters:
+        - $ref: "#/components/parameters/ClienteId"
+      responses:
+        200:
+          description: Dispositivos do cliente retornados com sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Dispositivo"
+        404:
+          description: Cliente não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedError"
+
+  /eventos/all:
+    get:
+      summary: Listar todos os eventos
+      description: |
+        Retorna uma lista com todos os eventos registrados no sistema.
+
+        **Requer autenticação.**
+      tags:
+        - Eventos
+      responses:
+        200:
+          description: Lista de eventos retornada com sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Evento"
+        401:
+          $ref: "#/components/responses/UnauthorizedError"
+
+  /eventos:
+    get:
+      summary: Buscar eventos por período
+      description: |
+        Retorna eventos filtrados por um período específico.
+
+        **Parâmetros de consulta:**
+        - startDate: Data inicial (formato ISO 8601)
+        - endDate: Data final (formato ISO 8601)
+
+        **Requer autenticação.**
+      tags:
+        - Eventos
+      parameters:
+        - name: startDate
+          in: query
+          description: Data inicial do período (ISO 8601)
+          required: true
+          schema:
+            type: string
+            format: date-time
+          example: "2024-01-01T00:00:00Z"
+        - name: endDate
+          in: query
+          description: Data final do período (ISO 8601)
+          required: true
+          schema:
+            type: string
+            format: date-time
+          example: "2024-12-31T23:59:59Z"
+      responses:
+        200:
+          description: Eventos do período retornados com sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Evento"
+        400:
+          description: Parâmetros de data inválidos
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedError"
+
+    post:
+      summary: Registrar novo evento
+      description: |
+        Registra um novo evento para um dispositivo.
+
+        **Tipos de evento disponíveis:**
+        - Ligado
+        - Desligado
+        - Movimento
+        - QuedaSinal
+
+        **Validações:**
+        - DispositivoId: obrigatório, dispositivo deve existir
+        - Tipo: obrigatório, deve ser um dos tipos válidos
+
+        **Requer autenticação.**
+      tags:
+        - Eventos
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateEventoRequest"
+            example:
+              tipo: "Ligado"
+              dispositivoId: "550e8400-e29b-41d4-a716-446655440001"
+      responses:
+        201:
+          description: Evento registrado com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Evento"
+        400:
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ValidationErrorResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedError"
+
+  /eventos/dispositivo/{dispositivoId}:
+    get:
+      summary: Buscar eventos por dispositivo
+      description: |
+        Retorna todos os eventos de um dispositivo específico.
+
+        **Requer autenticação.**
+      tags:
+        - Eventos
+      parameters:
+        - $ref: "#/components/parameters/DispositivoId"
+      responses:
+        200:
+          description: Eventos do dispositivo retornados com sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Evento"
+        404:
+          description: Dispositivo não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        401:
+          $ref: "#/components/responses/UnauthorizedError"
+
+  /dashboard:
+    get:
+      summary: Obter dados do dashboard
+      description: |
+        Retorna estatísticas e dados do dashboard dos últimos 7 dias.
+
+        **Inclui:**
+        - Eventos agrupados por tipo
+        - Contadores por período
+        - Estatísticas gerais
+
+        **Requer autenticação.**
+      tags:
+        - Dashboard
+      responses:
+        200:
+          description: Dados do dashboard retornados com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DashboardData"
+              example:
+                eventosPorTipo:
+                  Ligado: 25
+                  Desligado: 20
+                  Movimento: 15
+                  QuedaSinal: 5
+                totalEventos: 65
+                periodo: "Últimos 7 dias"
+                dataInicio: "2025-06-13T00:00:00Z"
+                dataFim: "2025-06-20T23:59:59Z"
+        401:
+          $ref: "#/components/responses/UnauthorizedError"
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: |
+        Autenticação JWT Bearer Token.
+
+        **Como obter o token:**
+        1. Faça POST em `/auth/login` com suas credenciais
+        2. Use o token retornado no header Authorization
+
+        **Formato:** `Authorization: Bearer <seu-jwt-token>`
+
+  parameters:
+    ClienteId:
+      name: id
+      in: path
+      description: ID único do cliente (GUID)
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: "550e8400-e29b-41d4-a716-446655440000"
+
+    DispositivoId:
+      name: id
+      in: path
+      description: ID único do dispositivo (GUID)
+      required: true
+      schema:
+        type: string
+        format: uuid
+      example: "550e8400-e29b-41d4-a716-446655440001"
+
+  responses:
+    UnauthorizedError:
+      description: Token JWT inválido ou ausente
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            message: "Token JWT inválido ou ausente"
+            details: "Acesso negado. Faça login novamente."
+
+    InternalServerError:
+      description: Erro interno do servidor
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ErrorResponse"
+          example:
+            message: "Erro interno do servidor"
+            details: "Ocorreu um erro inesperado. Tente novamente."
+
+  schemas:
+    LoginRequest:
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+          description: Nome de usuário
+          example: "admin"
+        password:
+          type: string
+          description: Senha do usuário
+          example: "123456"
+
+    LoginResponse:
+      type: object
+      properties:
+        token:
+          type: string
+          description: Token JWT para autenticação
+          example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        expiration:
+          type: string
+          format: date-time
+          description: Data de expiração do token
+          example: "2025-06-20T15:30:00Z"
+
+    Cliente:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: ID único do cliente
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        nome:
+          type: string
+          description: Nome completo do cliente
+          example: "João Silva"
+        email:
+          type: string
+          format: email
+          description: Email único do cliente
+          example: "joao.silva@email.com"
+        telefone:
+          type: string
+          nullable: true
+          description: Telefone do cliente (formato brasileiro)
+          example: "(11) 99999-9999"
+        status:
+          type: boolean
+          description: Status ativo/inativo do cliente
+          example: true
+
+    CreateClienteRequest:
+      type: object
+      required:
+        - nome
+        - email
+      properties:
+        nome:
+          type: string
+          minLength: 2
+          description: Nome completo do cliente
+          example: "João Silva"
+        email:
+          type: string
+          format: email
+          description: Email único do cliente
+          example: "joao.silva@email.com"
+        telefone:
+          type: string
+          nullable: true
+          description: Telefone do cliente (formato brasileiro)
+          example: "(11) 99999-9999"
+        status:
+          type: boolean
+          description: Status ativo/inativo do cliente
+          default: true
+          example: true
+
+    UpdateClienteRequest:
+      type: object
+      required:
+        - nome
+        - email
+      properties:
+        nome:
+          type: string
+          minLength: 2
+          description: Nome completo do cliente
+          example: "João Silva Atualizado"
+        email:
+          type: string
+          format: email
+          description: Email único do cliente
+          example: "joao.silva.novo@email.com"
+        telefone:
+          type: string
+          nullable: true
+          description: Telefone do cliente (formato brasileiro)
+          example: "(11) 88888-8888"
+        status:
+          type: boolean
+          description: Status ativo/inativo do cliente
+          example: false
+
+    Dispositivo:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: ID único do dispositivo
+          example: "550e8400-e29b-41d4-a716-446655440001"
+        serial:
+          type: string
+          description: Número serial único do dispositivo
+          example: "DEV001"
+        imei:
+          type: string
+          pattern: "^[0-9]{15}$"
+          description: IMEI do dispositivo (15 dígitos com validação de checksum)
+          example: "490154203237518"
+        dataAtivacao:
+          type: string
+          format: date-time
+          nullable: true
+          description: Data de ativação do dispositivo
+          example: "2025-06-20T10:30:00Z"
+        clienteId:
+          type: string
+          format: uuid
+          description: ID do cliente proprietário
+          example: "550e8400-e29b-41d4-a716-446655440000"
+
+    CreateDispositivoRequest:
+      type: object
+      required:
+        - serial
+        - imei
+        - clienteId
+      properties:
+        serial:
+          type: string
+          description: Número serial único do dispositivo
+          example: "DEV001"
+        imei:
+          type: string
+          pattern: "^[0-9]{15}$"
+          description: IMEI do dispositivo (15 dígitos)
+          example: "490154203237518"
+        clienteId:
+          type: string
+          format: uuid
+          description: ID do cliente proprietário
+          example: "550e8400-e29b-41d4-a716-446655440000"
+
+    Evento:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: ID único do evento
+          example: "550e8400-e29b-41d4-a716-446655440002"
+        tipo:
+          type: string
+          enum: [Ligado, Desligado, Movimento, QuedaSinal]
+          description: Tipo do evento
+          example: "Ligado"
+        dataHora:
+          type: string
+          format: date-time
+          description: Data e hora do evento
+          example: "2025-06-20T10:30:00Z"
+        dispositivoId:
+          type: string
+          format: uuid
+          description: ID do dispositivo que gerou o evento
+          example: "550e8400-e29b-41d4-a716-446655440001"
+
+    CreateEventoRequest:
+      type: object
+      required:
+        - tipo
+        - dispositivoId
+      properties:
+        tipo:
+          type: string
+          enum: [Ligado, Desligado, Movimento, QuedaSinal]
+          description: Tipo do evento
+          example: "Ligado"
+        dispositivoId:
+          type: string
+          format: uuid
+          description: ID do dispositivo que gerou o evento
+          example: "550e8400-e29b-41d4-a716-446655440001"
+
+    DashboardData:
+      type: object
+      properties:
+        eventosPorTipo:
+          type: object
+          description: Contagem de eventos agrupados por tipo
+          properties:
+            Ligado:
+              type: integer
+              example: 25
+            Desligado:
+              type: integer
+              example: 20
+            Movimento:
+              type: integer
+              example: 15
+            QuedaSinal:
+              type: integer
+              example: 5
+        totalEventos:
+          type: integer
+          description: Total de eventos no período
+          example: 65
+        periodo:
+          type: string
+          description: Descrição do período consultado
+          example: "Últimos 7 dias"
+        dataInicio:
+          type: string
+          format: date-time
+          description: Data de início do período
+          example: "2025-06-13T00:00:00Z"
+        dataFim:
+          type: string
+          format: date-time
+          description: Data de fim do período
+          example: "2025-06-20T23:59:59Z"
+
+    ErrorResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Mensagem de erro principal
+          example: "Erro na requisição"
+        details:
+          type: string
+          description: Detalhes adicionais do erro
+          example: "Descrição detalhada do problema"
+
+    ValidationErrorResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Mensagem de erro de validação
+          example: "Dados inválidos"
+        errors:
+          type: object
+          description: Erros de validação por campo
+          example:
+            email: ["O email já está em uso"]
+            nome: ["O nome é obrigatório"]
+        details:
+          type: string
+          description: Detalhes adicionais do erro
+          example: "Verifique os campos destacados e tente novamente"
