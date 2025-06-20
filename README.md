@@ -12,8 +12,8 @@
 
 ### Pré-requisitos
 
-- .NET 8 SDK
-- Docker (para SQL Server)
+- [.NET 8 SDK](https://dotnet.microsoft.com/pt-br/download/dotnet/8.0)
+- [Docker](https://www.docker.com/products/docker-desktop/) (para SQL Server)
 
 ### Setup Rápido
 
