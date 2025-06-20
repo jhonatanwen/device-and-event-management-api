@@ -17,12 +17,16 @@
 
 ### Setup Rápido
 
-1. **Clone e restaure dependências**
+1. **Clone, restaure as dependências e builde o projeto**
 
 ```bash
 git clone https://github.com/jhonatanwen/desafio-tecnico-nevoa.git
+
 cd desafio-tecnico-nevoa
+
 dotnet restore
+
+dotnet build
 ```
 
 2. **Configure o banco de dados com Docker**
@@ -40,7 +44,10 @@ setup-docker-sqlserver.bat
 3. **Execute as migrations**
 
 ```bash
+# Necessário que esteja dentro dessa pasta para que as migrations sejam aplicadas corretamente
 cd src/DeviceManagement.API
+
+# Cria o banco de dados e aplica as migrations
 dotnet ef database update --project ../DeviceManagement.Infrastructure
 ```
 
@@ -48,12 +55,13 @@ dotnet ef database update --project ../DeviceManagement.Infrastructure
 
 ```bash
 dotnet run
+# caso queira usar https -> dotnet run --urls "http://localhost:5231;https://localhost:7254"
 ```
 
 5. **Acesse a API**
 
-- Endpoint base para diz que a API está funcionando: http://localhost:5231/api/v1
-- Swagger: http://localhost:5231/swagger
+- Endpoint base para diz que a API está funcionando: http://localhost:5231/api/v1 (ou https://localhost:7254/api/v1)
+- **Documentação**: http://localhost:5231/docs (ou https://localhost:7254/docs)
 
 ### Configuração Manual do Banco
 
