@@ -85,7 +85,15 @@ public sealed class ClientesController(
             return BadRequest(result.ErrorMessage);
         }
 
-        return NoContent();
+        var clienteAtualizado = new Cliente(
+            result.Data!.Id,
+            result.Data.Nome,
+            result.Data.Email,
+            result.Data.Telefone,
+            result.Data.Status
+        );
+
+        return Ok(clienteAtualizado);
     }
 
     [HttpDelete("{id:guid}")]
