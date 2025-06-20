@@ -1,0 +1,729 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-06-20T08:46:13.824Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.6",
+  "resources": [
+    {
+      "_id": "req_e28f1834162b4cbbb4be0710c7935b55",
+      "parentId": "fld_ad58f5fb837d4cb7a2b4bb72af8d471b",
+      "modified": 1750407286833,
+      "created": 1750407248606,
+      "url": "http://localhost:5231/api/v1/clientes/d481f860-89cd-4897-9595-7d0f68542b79",
+      "name": "DELETE Cliente",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_c05d2d5e7caa45038691bd3f0905caca",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "prefix": "Bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQ5NmI1YzVjLTYwMjMtNDE0My05OGNmLWNkNGU2OTE0ZGI3MiIsImV4cCI6MTc1MDQwODk3NCwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.7pVWjkZb1QxtZ_HBIyWYa9FuwGXlev_9prhmJjZtrrE"
+      },
+      "metaSortKey": -1750406104033,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_ad58f5fb837d4cb7a2b4bb72af8d471b",
+      "parentId": "wrk_54b5f75d585c4f9ba32974d18baa6a82",
+      "modified": 1750297174475,
+      "created": 1750297174475,
+      "name": "Cliente",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1750297174475,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_54b5f75d585c4f9ba32974d18baa6a82",
+      "parentId": null,
+      "modified": 1750277078023,
+      "created": 1750277078023,
+      "name": "Desafio-Tecnico-Nevoa-Jhonatan",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_d6b34e36117748209a81307f46c0d4e9",
+      "parentId": "fld_ad58f5fb837d4cb7a2b4bb72af8d471b",
+      "modified": 1750406137016,
+      "created": 1750277860811,
+      "url": "http://localhost:5231/api/v1/clientes",
+      "name": "GET Clientes",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_c05d2d5e7caa45038691bd3f0905caca",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "prefix": "Bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQ5NmI1YzVjLTYwMjMtNDE0My05OGNmLWNkNGU2OTE0ZGI3MiIsImV4cCI6MTc1MDQwODk3NCwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.7pVWjkZb1QxtZ_HBIyWYa9FuwGXlev_9prhmJjZtrrE"
+      },
+      "metaSortKey": -1750406103933,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_ac8f010ff1404ee380885bd6b0eca37a",
+      "parentId": "fld_ad58f5fb837d4cb7a2b4bb72af8d471b",
+      "modified": 1750407293721,
+      "created": 1750406129683,
+      "url": "http://localhost:5231/api/v1/clientes/d481f860-89cd-4897-9595-7d0f68542b79",
+      "name": "GET Cliente ById",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_c05d2d5e7caa45038691bd3f0905caca",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "prefix": "Bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQ5NmI1YzVjLTYwMjMtNDE0My05OGNmLWNkNGU2OTE0ZGI3MiIsImV4cCI6MTc1MDQwODk3NCwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.7pVWjkZb1QxtZ_HBIyWYa9FuwGXlev_9prhmJjZtrrE"
+      },
+      "metaSortKey": -1750406101258.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_b1c74d8b4e824599a8f3362264f30668",
+      "parentId": "fld_ad58f5fb837d4cb7a2b4bb72af8d471b",
+      "modified": 1750406162637,
+      "created": 1750277623807,
+      "url": "http://localhost:5231/api/v1/clientes",
+      "name": "POST Cliente",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Sana Fest\",\n  \"email\": \"contato@fcnb.org.br\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_0494ce8fea364743b4e28b42d5f98a4a"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQ5NmI1YzVjLTYwMjMtNDE0My05OGNmLWNkNGU2OTE0ZGI3MiIsImV4cCI6MTc1MDQwODk3NCwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.7pVWjkZb1QxtZ_HBIyWYa9FuwGXlev_9prhmJjZtrrE",
+        "prefix": "Bearer"
+      },
+      "metaSortKey": -1750297215239,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8f709059bfe24490bd08930f787b1eb7",
+      "parentId": "fld_ad58f5fb837d4cb7a2b4bb72af8d471b",
+      "modified": 1750406395995,
+      "created": 1750406155844,
+      "url": "http://localhost:5231/api/v1/clientes/d481f860-89cd-4897-9595-7d0f68542b79",
+      "name": "PUT Cliente",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Sana Fest\",\n  \"email\": \"contato@fcnb.org.br\",\n\t\"telefone\": \"85992004086\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_0494ce8fea364743b4e28b42d5f98a4a"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQ5NmI1YzVjLTYwMjMtNDE0My05OGNmLWNkNGU2OTE0ZGI3MiIsImV4cCI6MTc1MDQwODk3NCwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.7pVWjkZb1QxtZ_HBIyWYa9FuwGXlev_9prhmJjZtrrE",
+        "prefix": "Bearer"
+      },
+      "metaSortKey": -1750297210431,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f9a0fd8abe854ccfa8b6c6a538207fb1",
+      "parentId": "fld_ad58f5fb837d4cb7a2b4bb72af8d471b",
+      "modified": 1750408340547,
+      "created": 1750408315841,
+      "url": "http://localhost:5231/api/v1/clientes/d481f860-89cd-4897-9595-7d0f68542b79",
+      "name": "PATCH Cliente Status",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"status\": false\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_0494ce8fea364743b4e28b42d5f98a4a"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQ5NmI1YzVjLTYwMjMtNDE0My05OGNmLWNkNGU2OTE0ZGI3MiIsImV4cCI6MTc1MDQwODk3NCwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.7pVWjkZb1QxtZ_HBIyWYa9FuwGXlev_9prhmJjZtrrE",
+        "prefix": "Bearer"
+      },
+      "metaSortKey": -1750297208027,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e9eda749214f49ca94604456465b7d4e",
+      "parentId": "fld_007dff44b34b4c048c91bce29e516e90",
+      "modified": 1750407297471,
+      "created": 1750404098479,
+      "url": "http://localhost:5231/api/v1/dispositivos/",
+      "name": "GET Dispositivos",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json",
+          "id": "pair_de1b546cc07a41c2b8edd236a87b8819"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQ5NmI1YzVjLTYwMjMtNDE0My05OGNmLWNkNGU2OTE0ZGI3MiIsImV4cCI6MTc1MDQwODk3NCwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.7pVWjkZb1QxtZ_HBIyWYa9FuwGXlev_9prhmJjZtrrE",
+        "prefix": "Bearer"
+      },
+      "metaSortKey": -1750403988251,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_007dff44b34b4c048c91bce29e516e90",
+      "parentId": "wrk_54b5f75d585c4f9ba32974d18baa6a82",
+      "modified": 1750403925222,
+      "created": 1750297198515,
+      "name": "Dispositivo",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1750297151464,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_82e10de80fe9434b9dedaedcbeb4ecbd",
+      "parentId": "fld_007dff44b34b4c048c91bce29e516e90",
+      "modified": 1750404762789,
+      "created": 1750404737233,
+      "url": "http://localhost:5231/api/v1/dispositivos/cliente/1d8dfb15-1aa9-4f0a-8c55-dbd97be48f4c",
+      "name": "GET Dispositivo ByCliente",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json",
+          "id": "pair_de1b546cc07a41c2b8edd236a87b8819"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQ5NmI1YzVjLTYwMjMtNDE0My05OGNmLWNkNGU2OTE0ZGI3MiIsImV4cCI6MTc1MDQwODk3NCwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.7pVWjkZb1QxtZ_HBIyWYa9FuwGXlev_9prhmJjZtrrE",
+        "prefix": "Bearer"
+      },
+      "metaSortKey": -1750403988201,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_b8a1bd9df9cb44d794d6d2206e113146",
+      "parentId": "fld_007dff44b34b4c048c91bce29e516e90",
+      "modified": 1750404078059,
+      "created": 1750403988151,
+      "url": "http://localhost:5231/api/v1/dispositivos/3365a8e0-824f-4f74-8e5f-1647dff528cb",
+      "name": "GET Dispositivo ById",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json",
+          "id": "pair_de1b546cc07a41c2b8edd236a87b8819"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQ5NmI1YzVjLTYwMjMtNDE0My05OGNmLWNkNGU2OTE0ZGI3MiIsImV4cCI6MTc1MDQwODk3NCwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.7pVWjkZb1QxtZ_HBIyWYa9FuwGXlev_9prhmJjZtrrE",
+        "prefix": "Bearer"
+      },
+      "metaSortKey": -1750403988151,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_ee0e442b47d84da1b7a89453f818d46d",
+      "parentId": "fld_007dff44b34b4c048c91bce29e516e90",
+      "modified": 1750409030642,
+      "created": 1750285503064,
+      "url": "http://localhost:5231/api/v1/dispositivos",
+      "name": "POST Dispositivo",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"serial\": \"DEV002\",\n  \"imei\": \"123456789012347\",\n  \"clienteId\": \"1d8dfb15-1aa9-4f0a-8c55-dbd97be48f4c\",\n  \"dataAtivacao\": \"2025-06-18T22:10:00Z\"\n}"
+      },
+      "parameters": [],
+      "headers": [{ "name": "Content-Type", "value": "application/json" }],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6Ijg0OTNiNDMzLWMxNGQtNGNlMC1iOTliLTI4MWFmNDgzZjg4YyIsImV4cCI6MTc1MDI4ODcyMSwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.z3CDhFaKXVSlfe5J0isatRYUV7RvQwufr8CXyyw6YZU",
+        "prefix": "Bearer"
+      },
+      "metaSortKey": -1750297205623,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_6322f8919c7544c5bd85c5d1462ee82a",
+      "parentId": "fld_007dff44b34b4c048c91bce29e516e90",
+      "modified": 1750409037280,
+      "created": 1750285065431,
+      "url": "http://localhost:5231/api/v1/dispositivos/3365a8e0-824f-4f74-8e5f-1647dff528cb",
+      "name": "PUT Dispositivo",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"serial\": \"DEV001\",\n  \"imei\": \"490154203237518\",\n  \"dataAtivacao\": \"2025-06-18T22:15:00Z\"\n}"
+      },
+      "parameters": [],
+      "headers": [{ "name": "Content-Type", "value": "application/json" }],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6Ijg0OTNiNDMzLWMxNGQtNGNlMC1iOTliLTI4MWFmNDgzZjg4YyIsImV4cCI6MTc1MDI4ODcyMSwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.z3CDhFaKXVSlfe5J0isatRYUV7RvQwufr8CXyyw6YZU",
+        "prefix": "Bearer"
+      },
+      "metaSortKey": -1750297205523,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_fca6570a773141e38e89454324e008f1",
+      "parentId": "fld_e2cb83cfc0d44446b3db9d5c89056728",
+      "modified": 1750407530436,
+      "created": 1750407507490,
+      "url": "http://localhost:5231/api/v1/eventos/all",
+      "name": "GET Eventos getAll",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json",
+          "id": "pair_c703b35be7fa4d029c720926fcaaf495"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQ5NmI1YzVjLTYwMjMtNDE0My05OGNmLWNkNGU2OTE0ZGI3MiIsImV4cCI6MTc1MDQwODk3NCwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.7pVWjkZb1QxtZ_HBIyWYa9FuwGXlev_9prhmJjZtrrE",
+        "prefix": "Bearer"
+      },
+      "metaSortKey": -1750403405376,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_e2cb83cfc0d44446b3db9d5c89056728",
+      "parentId": "wrk_54b5f75d585c4f9ba32974d18baa6a82",
+      "modified": 1750297128453,
+      "created": 1750297128453,
+      "name": "Evento",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1750297128453,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_cf4aa242ebda49ac9c6a8cd876325e06",
+      "parentId": "fld_e2cb83cfc0d44446b3db9d5c89056728",
+      "modified": 1750407524550,
+      "created": 1750403405276,
+      "url": "http://localhost:5231/api/v1/eventos/dispositivo/3365a8e0-824f-4f74-8e5f-1647dff528cb",
+      "name": "GET Eventos ByDispositivo",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json",
+          "id": "pair_7f20c6a882da455b895c3b1ee936ae61"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQ5NmI1YzVjLTYwMjMtNDE0My05OGNmLWNkNGU2OTE0ZGI3MiIsImV4cCI6MTc1MDQwODk3NCwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.7pVWjkZb1QxtZ_HBIyWYa9FuwGXlev_9prhmJjZtrrE",
+        "prefix": "Bearer"
+      },
+      "metaSortKey": -1750403405276,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_65fb341004ee41cea9054e776270dcdb",
+      "parentId": "fld_e2cb83cfc0d44446b3db9d5c89056728",
+      "modified": 1750403442592,
+      "created": 1750400281279,
+      "url": "http://localhost:5231/api/v1/eventos?startDate=2025-06-17&endDate=2025-06-20",
+      "name": "GET Eventos ByDate",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json",
+          "id": "pair_c703b35be7fa4d029c720926fcaaf495"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQ5NmI1YzVjLTYwMjMtNDE0My05OGNmLWNkNGU2OTE0ZGI3MiIsImV4cCI6MTc1MDQwODk3NCwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.7pVWjkZb1QxtZ_HBIyWYa9FuwGXlev_9prhmJjZtrrE",
+        "prefix": "Bearer"
+      },
+      "metaSortKey": -1750400281279,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_afefeb41e3e74e0da51aeaed682f729a",
+      "parentId": "fld_e2cb83cfc0d44446b3db9d5c89056728",
+      "modified": 1750403679244,
+      "created": 1750284506861,
+      "url": "http://localhost:5231/api/v1/eventos",
+      "name": "POST Evento 1",
+      "description": "Evento de Dispositivo Ligado",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"tipo\": 1,\n\t\"dispositivoId\": \"3365a8e0-824f-4f74-8e5f-1647dff528cb\"\n}"
+      },
+      "parameters": [],
+      "headers": [{ "name": "Content-Type", "value": "application/json" }],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6Ijg0OTNiNDMzLWMxNGQtNGNlMC1iOTliLTI4MWFmNDgzZjg4YyIsImV4cCI6MTc1MDI4ODcyMSwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.z3CDhFaKXVSlfe5J0isatRYUV7RvQwufr8CXyyw6YZU",
+        "prefix": "Bearer"
+      },
+      "metaSortKey": -1750297142922,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_29ee338597884d6993f678b93cf8bbba",
+      "parentId": "fld_e2cb83cfc0d44446b3db9d5c89056728",
+      "modified": 1750403715493,
+      "created": 1750285368143,
+      "url": "http://localhost:5231/api/v1/eventos",
+      "name": "POST Evento 2",
+      "description": "Evento de Dispositivo Desligado",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"tipo\": 2,\n  \"dispositivoId\": \"3365a8e0-824f-4f74-8e5f-1647dff528cb\"\n}"
+      },
+      "parameters": [],
+      "headers": [{ "name": "Content-Type", "value": "application/json" }],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6Ijg0OTNiNDMzLWMxNGQtNGNlMC1iOTliLTI4MWFmNDgzZjg4YyIsImV4cCI6MTc1MDI4ODcyMSwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.z3CDhFaKXVSlfe5J0isatRYUV7RvQwufr8CXyyw6YZU",
+        "prefix": "Bearer"
+      },
+      "metaSortKey": -1750297142872,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_b2fadac0a7e6493bb0f5f0d3cbef03c1",
+      "parentId": "fld_e2cb83cfc0d44446b3db9d5c89056728",
+      "modified": 1750403725368,
+      "created": 1750285372882,
+      "url": "http://localhost:5231/api/v1/eventos",
+      "name": "POST Evento 3",
+      "description": "Evento de Dispositivo Movimento",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"tipo\": 3,\n  \"dispositivoId\": \"3365a8e0-824f-4f74-8e5f-1647dff528cb\"\n}"
+      },
+      "parameters": [],
+      "headers": [{ "name": "Content-Type", "value": "application/json" }],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6Ijg0OTNiNDMzLWMxNGQtNGNlMC1iOTliLTI4MWFmNDgzZjg4YyIsImV4cCI6MTc1MDI4ODcyMSwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.z3CDhFaKXVSlfe5J0isatRYUV7RvQwufr8CXyyw6YZU",
+        "prefix": "Bearer"
+      },
+      "metaSortKey": -1750297142847,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e3f7f5ad76c54743bb84da5a429e11b0",
+      "parentId": "fld_e2cb83cfc0d44446b3db9d5c89056728",
+      "modified": 1750403737709,
+      "created": 1750285376913,
+      "url": "http://localhost:5231/api/v1/eventos",
+      "name": "POST Evento 4",
+      "description": "Evento de Dispositivo QuedaSinal",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"tipo\": 4,\n  \"dispositivoId\": \"3365a8e0-824f-4f74-8e5f-1647dff528cb\"\n}"
+      },
+      "parameters": [],
+      "headers": [{ "name": "Content-Type", "value": "application/json" }],
+      "authentication": {
+        "type": "bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6Ijg0OTNiNDMzLWMxNGQtNGNlMC1iOTliLTI4MWFmNDgzZjg4YyIsImV4cCI6MTc1MDI4ODcyMSwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.z3CDhFaKXVSlfe5J0isatRYUV7RvQwufr8CXyyw6YZU",
+        "prefix": "Bearer"
+      },
+      "metaSortKey": -1750297142822,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_4edd5232620c4d36aed74dc0b772f13c",
+      "parentId": "wrk_54b5f75d585c4f9ba32974d18baa6a82",
+      "modified": 1750409071077,
+      "created": 1750286075913,
+      "url": "http://localhost:5231/api/v1/dashboard",
+      "name": "GET Dashboard",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "application/json",
+          "id": "pair_561b5e2751aa4fe19a7c19d686c72db4"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "prefix": "Bearer",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQ5NmI1YzVjLTYwMjMtNDE0My05OGNmLWNkNGU2OTE0ZGI3MiIsImV4cCI6MTc1MDQwODk3NCwiaXNzIjoiRGV2aWNlTWFuYWdlbWVudEFQSSIsImF1ZCI6IkRldmljZU1hbmFnZW1lbnRDbGllbnRzIn0.7pVWjkZb1QxtZ_HBIyWYa9FuwGXlev_9prhmJjZtrrE"
+      },
+      "metaSortKey": -1750286075913,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_10a58f0cb0f54ede8ef2b0b536a24440",
+      "parentId": "wrk_54b5f75d585c4f9ba32974d18baa6a82",
+      "modified": 1750409124633,
+      "created": 1750277245284,
+      "url": "http://localhost:5231/api/v1/auth/login",
+      "name": "POST Auth (pegar token jwt)",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"username\": \"admin\",\n  \"password\": \"123456\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_48d3c0bff07145f8ba0cea06a37cea79"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1750277245284,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_046243a66858e0b69f45ecbca2d9dd09e486881d",
+      "parentId": "wrk_54b5f75d585c4f9ba32974d18baa6a82",
+      "modified": 1750277078025,
+      "created": 1750277078025,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1750277078025,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_046243a66858e0b69f45ecbca2d9dd09e486881d",
+      "parentId": "wrk_54b5f75d585c4f9ba32974d18baa6a82",
+      "modified": 1750277078026,
+      "created": 1750277078026,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    }
+  ]
+}
