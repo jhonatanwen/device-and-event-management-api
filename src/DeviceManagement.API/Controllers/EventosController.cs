@@ -1,4 +1,4 @@
-using DeviceManagement.API.DTOs;
+using DeviceManagement.API.Contracts;
 using DeviceManagement.Application.UseCases.Eventos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

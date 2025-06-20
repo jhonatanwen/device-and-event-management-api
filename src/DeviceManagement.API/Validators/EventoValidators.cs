@@ -1,4 +1,4 @@
-using DeviceManagement.API.DTOs;
+using DeviceManagement.API.Contracts;
 using DeviceManagement.Domain.Enums;
 using FluentValidation;
 

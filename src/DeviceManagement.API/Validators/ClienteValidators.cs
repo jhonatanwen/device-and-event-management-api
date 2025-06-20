@@ -1,4 +1,4 @@
-using DeviceManagement.API.DTOs;
+using DeviceManagement.API.Contracts;
 using FluentValidation;
 
 namespace DeviceManagement.API.Validators;

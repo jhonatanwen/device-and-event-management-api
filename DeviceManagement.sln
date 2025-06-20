@@ -1,5 +1,4 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -12,8 +11,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceManagement.Infrastructure", "src\DeviceManagement.Infrastructure\DeviceManagement.Infrastructure.csproj", "{2A689BCC-1EEC-4AA8-889B-1556CF079F88}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceManagement.API", "src\DeviceManagement.API\DeviceManagement.API.csproj", "{78FB21BA-7027-4B73-B975-51A9019319E5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceManagement.UnitTests", "tests\DeviceManagement.UnitTests\DeviceManagement.UnitTests.csproj", "{04CD24CD-191A-4BBD-9B45-0C0667424E2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,18 +70,6 @@ Global
 		{78FB21BA-7027-4B73-B975-51A9019319E5}.Release|x64.Build.0 = Release|Any CPU
 		{78FB21BA-7027-4B73-B975-51A9019319E5}.Release|x86.ActiveCfg = Release|Any CPU
 		{78FB21BA-7027-4B73-B975-51A9019319E5}.Release|x86.Build.0 = Release|Any CPU
-		{04CD24CD-191A-4BBD-9B45-0C0667424E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04CD24CD-191A-4BBD-9B45-0C0667424E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04CD24CD-191A-4BBD-9B45-0C0667424E2A}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{04CD24CD-191A-4BBD-9B45-0C0667424E2A}.Debug|x64.Build.0 = Debug|Any CPU
-		{04CD24CD-191A-4BBD-9B45-0C0667424E2A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{04CD24CD-191A-4BBD-9B45-0C0667424E2A}.Debug|x86.Build.0 = Debug|Any CPU
-		{04CD24CD-191A-4BBD-9B45-0C0667424E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04CD24CD-191A-4BBD-9B45-0C0667424E2A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{04CD24CD-191A-4BBD-9B45-0C0667424E2A}.Release|x64.ActiveCfg = Release|Any CPU
-		{04CD24CD-191A-4BBD-9B45-0C0667424E2A}.Release|x64.Build.0 = Release|Any CPU
-		{04CD24CD-191A-4BBD-9B45-0C0667424E2A}.Release|x86.ActiveCfg = Release|Any CPU
-		{04CD24CD-191A-4BBD-9B45-0C0667424E2A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +79,5 @@ Global
 		{8D7717C0-FC60-4011-9706-4959516BB4AC} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{2A689BCC-1EEC-4AA8-889B-1556CF079F88} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{78FB21BA-7027-4B73-B975-51A9019319E5} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
-		{04CD24CD-191A-4BBD-9B45-0C0667424E2A} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 	EndGlobalSection
 EndGlobal

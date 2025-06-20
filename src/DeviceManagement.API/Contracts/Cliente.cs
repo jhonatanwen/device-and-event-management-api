@@ -1,22 +1,26 @@
-namespace DeviceManagement.API.DTOs;
+namespace DeviceManagement.API.Contracts;
 
 public sealed record CreateCliente(
     string Nome,
     string Email,
     string? Telefone = null,
-    bool Status = true);
+    bool Status = true
+);
 
 public sealed record UpdateCliente(
     string Nome,
     string Email,
-    string? Telefone);
+    string? Telefone
+);
 
 public sealed record PatchCliente(
-    bool? Status);
+    bool? Status
+);
 
 public sealed record Cliente(
     Guid Id,
     string Nome,
     string Email,
     string? Telefone,
-    bool Status);
+    bool Status
+);
