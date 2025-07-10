@@ -139,5 +139,3 @@ src/
 - .NET 8, Entity Framework Core 9
 - SQL Server, JWT Authentication
 - FluentValidation, Swagger/OpenAPI
-
-### Obrigado pela oportunidade! 😄
